@@ -1,0 +1,7 @@
+# This file intentionally left blank. Add your Python
+# requirements here as needed
+
+nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl
+
+pyodbc
+

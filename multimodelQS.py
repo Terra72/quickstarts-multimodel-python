@@ -10,7 +10,7 @@ checkAirfare to see how to create a custom data structure using the Native API.
 import pyodbc
 import irisnative
 
-
+import os
 # List of airports
 AIRPORTS = [
     ("Boston Logan International", "BOS", "02128"),
@@ -33,9 +33,10 @@ LOCATIONS = [
 # Connect to InterSystems IRIS
 def connect_to_iris():
     # Login credentials
-    driver = "{InterSystems ODBC}"
+    # driver = "pyodbc_wheel/ODBC-2018.1.1.635.0-win_x64.exe"   #default "{InterSystems ODBC}"            # temp pyodbc_wheel/
+    driver = os.path.join('pyodbc_wheel', 'ODBC-2018.1.1.635.0-win_x64.exe')
     ip = "localhost"
-    port = 51773
+    port = 51773     # docker? 8123,  local 51773
     namespace = "USER"
     username = "SuperUser"
     password = "SYS"

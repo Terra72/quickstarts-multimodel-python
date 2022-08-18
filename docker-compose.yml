@@ -1,0 +1,54 @@
+version: "3.7"
+
+services:
+  multimodel:
+    container_name: iris-multimodel
+    image: iriscustom
+    build: .
+    restart: always
+    command: python -u multimodelQS.py
+    ports:
+      - "8123:8123"
+  #  iris:
+  #   container_name: my-iris
+  #   init: true
+  #   image: intersystems/iris-community:2021.2.0.651.0
+  #    # If your CPU has >8 cores limit InterSystems IRIS CE to 8 with
+  #    # cpuset: "0-7"
+  #   volumes:
+  #     - /home/user1:/durable
+  #    # Change /home/user1 to your directory
+  #   environment:
+  #    - ISC_DATA_DIRECTORY=/durable
+  #   ports:
+  #    - 9092:52773
+  #    - 9091:1972
+  #   # command: python -u multimodelQS.py
+  #   command: --password-file /durable/password/password.txt   
+
+  # shopify_syncer:
+  #   container_name: shopify-syncer
+  #   env_file:
+  #     - .env
+  #   build: .
+  #   volumes:
+  #     - .:/usr/src/app
+  #   command: python -u app/scraper.py 
+  #   depends_on:
+  #     - clickhouse
+  #   ports:
+  #     - 8412:8412
+
+  # reporter:
+  #   container_name: shopify-reporter
+  #   env_file:
+  #     - .env
+  #   build: .
+  #   volumes:
+  #     - .:/usr/src/app
+  #   ports:
+  #     - 8120:8120
+  #   command: python -u app/reporter.py
+  #   depends_on:
+
+  
